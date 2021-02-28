@@ -1,4 +1,5 @@
 import json
+import requests
 
 
 def reset_time(standart_time):
@@ -23,3 +24,19 @@ def time_trak(lost_time1, lost_time2):
     player2_timer -= lost_time2
     times = [player1_timer, player2_timer]
     return times
+
+
+def get_profile(enemy_id):
+    name = requests.get('я хз как это реализовать')  # Вот тут должен быть запрос на клиент с сервака, хз можно ли так
+    win_counter = int(requests.get('аналогично'))
+    lose_counter = int(requests.get(''))
+    prof = {
+        "id": enemy_id,
+        "player_name": name,
+        "player_win": win_counter,
+        "player_lose": lose_counter
+    }
+
+    y = json.dumps(prof)
+
+    return y

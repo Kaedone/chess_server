@@ -24,3 +24,9 @@ def timer(lost_time1, lost_time2):
 @app.route('/set_time')
 def set_time(stand_time):
     return reset_time(stand_time)
+
+
+# Просмотр профиля соперника
+@app.route('get_profile/<enemy_id>')
+def profile(enemy_id):
+    return get_profile(enemy_id)
