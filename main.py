@@ -30,3 +30,9 @@ def set_time(stand_time):
 @app.route('get_profile/<enemy_id>')
 def profile(enemy_id):
     return get_profile(enemy_id)
+
+
+# Установка и подсчёт рейтинга
+@app.route('get_profile/<enemy_id>/stat')
+def stat(enemy_id):
+    return get_stat(enemy_id)

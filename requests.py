@@ -27,9 +27,7 @@ def time_trak(lost_time1, lost_time2):
 
 
 def get_profile(enemy_id):
-    name = requests.get('я хз как это реализовать')  # Вот тут должен быть запрос на клиент с сервака, хз можно ли так
-    win_counter = int(requests.get('аналогично'))
-    lose_counter = int(requests.get(''))
+    # тут должен быть запрос на БД
     prof = {
         "id": enemy_id,
         "player_name": name,
@@ -40,3 +38,9 @@ def get_profile(enemy_id):
     y = json.dumps(prof)
 
     return y
+
+
+def get_stat(enemy_id):
+    # тут должен быть запрос на БД
+    stat = ()
+    return stat
