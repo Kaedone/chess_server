@@ -36,3 +36,6 @@ def profile(enemy_id):
 @app.route('get_profile/<enemy_id>/stat')
 def stat(enemy_id):
     return get_stat(enemy_id)
+
+client = pymongo.MongoClient("mongodb+srv://Kaedone:<password>@chess.wscna.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+db = client.test
