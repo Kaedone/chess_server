@@ -27,15 +27,20 @@ def set_time(stand_time):
 
 
 # Просмотр профиля соперника
-@app.route('get_profile/<enemy_id>')
+@app.route('/get_profile/<enemy_id>')
 def profile(enemy_id):
     return get_profile(enemy_id)
 
 
 # Установка и подсчёт рейтинга
-@app.route('get_profile/<enemy_id>/stat')
+@app.route('/get_profile/<enemy_id>/stat')
 def stat(enemy_id):
     return get_stat(enemy_id)
 
-client = pymongo.MongoClient("mongodb+srv://Kaedone:<password>@chess.wscna.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+
+client = pymongo.MongoClient(
+    "mongodb+srv://Kaedone:<password>@chess.wscna.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 db = client.test
+
+if __name__ == '__main__':
+    app.run(host="0.0.0.0", port="8080", debug=True)
